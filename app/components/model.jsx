@@ -1,7 +1,5 @@
 "use client";
 
-import "bootstrap-icons/font/bootstrap-icons.css";
-
 import { useEffect, useState, useRef } from "react";
 
 import { get_positions, radians_to_degrees, days_per_second } from "@/app/util/motion";
@@ -18,10 +16,24 @@ export default function Model(props) {
       document.getElementsByClassName('planet')[i+1].style["transform"] = "rotate(" + planet_deg_abs + "deg)";
     }
   }, [props.date]);
-
+  
+  useEffect(() => {
+    const rings = document.getElementsByClassName("planet");
+    for ( let i = 0 ; i < rings.length; i++ ) {
+      if (props.color) rings[i].classList.remove("no-color");
+      else  rings[i].classList.add("no-color");
+    }
+  }, [props.color]);
+  
+  useEffect(() => {
+    const rings = document.getElementsByClassName("planet");
+    for ( let i = 0 ; i < rings.length; i++ ) {
+      if (props.gap) rings[i].classList.add("bordered-planet");
+      else  rings[i].classList.remove("bordered-planet");
+    }
+  }, [props.gap]);
 
   useEffect(() => {
-    console.log(props.planetSize);
     const rings = document.getElementsByClassName("planet");
     for ( let i = 0 ; i < rings.length; i++ ) {
       rings[i].style["r"] = (props.planetSize/2);
@@ -56,16 +68,16 @@ export default function Model(props) {
           <circle className="ring" id="pluto-ring" cx="0" cy="0" r="90" stroke="white" fill="none"></circle>
         </g>
         <g id="planets">
-          <g><circle className="planet c-planet" id="sun" cx="0" cy="0"         style={{ transform: "rotate(0deg)"}}></circle></g>
-          <g><circle className="planet c-planet" id="mercury" cx="10" cy="0"    style={{ transform: "rotate(222.775deg)"}}></circle></g>
-          <g><circle className="planet c-planet" id="venus" cx="20" cy="0"      style={{ transform: "rotate(349.25deg)"}}></circle></g>
-          <g><circle className="planet c-planet" id="earth" cx="30" cy="0"      style={{ transform: "rotate(417.043deg)"}}></circle></g>
-          <g><circle className="planet c-planet" id="mars" cx="40" cy="0"       style={{ transform: "rotate(438.501deg)"}}></circle></g>
-          <g><circle className="planet c-planet" id="jupiter" cx="50" cy="0"    style={{ transform: "rotate(528.909deg)"}}></circle></g>
-          <g><circle className="planet c-planet" id="saturn" cx="60" cy="0"     style={{ transform: "rotate(327.514deg)"}}></circle></g>
-          <g><circle className="planet c-planet" id="uranus" cx="70" cy="0"     style={{ transform: "rotate(535.99deg)"}}></circle></g>
-          <g><circle className="planet c-planet" id="neptune" cx="80" cy="0"    style={{ transform: "rotate(481.834deg)"}}></circle></g>
-          <g><circle className="planet c-planet" id="pluto" cx="90" cy="0"      style={{ transform: "rotate(15deg)"}}></circle></g>
+          <g><circle className="planet no-color" id="sun" cx="0" cy="0"         style={{ transform: "rotate(0deg)"}}></circle></g>
+          <g><circle className="planet no-color" id="mercury" cx="10" cy="0"    style={{ transform: "rotate(222.775deg)"}}></circle></g>
+          <g><circle className="planet no-color" id="venus" cx="20" cy="0"      style={{ transform: "rotate(349.25deg)"}}></circle></g>
+          <g><circle className="planet no-color" id="earth" cx="30" cy="0"      style={{ transform: "rotate(417.043deg)"}}></circle></g>
+          <g><circle className="planet no-color" id="mars" cx="40" cy="0"       style={{ transform: "rotate(438.501deg)"}}></circle></g>
+          <g><circle className="planet no-color" id="jupiter" cx="50" cy="0"    style={{ transform: "rotate(528.909deg)"}}></circle></g>
+          <g><circle className="planet no-color" id="saturn" cx="60" cy="0"     style={{ transform: "rotate(327.514deg)"}}></circle></g>
+          <g><circle className="planet no-color" id="uranus" cx="70" cy="0"     style={{ transform: "rotate(535.99deg)"}}></circle></g>
+          <g><circle className="planet no-color" id="neptune" cx="80" cy="0"    style={{ transform: "rotate(481.834deg)"}}></circle></g>
+          <g><circle className="planet no-color" id="pluto" cx="90" cy="0"      style={{ transform: "rotate(15deg)"}}></circle></g>
         </g>
       </svg>
     </div>

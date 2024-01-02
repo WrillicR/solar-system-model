@@ -18,11 +18,11 @@
   -ms-animation:rotate 8s linear 0s infinite forwards;
   animation:rotate 8s linear 0s infinite forwards;*/
 }
-.b-planet {
+.bordered-planet {
   stroke-width: 2;
   r: 2;
 }
-.c-planet {
+.no-color {
   fill: #fff !important;
   color: #ccc !important;
 }
