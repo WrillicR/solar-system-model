@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <!-- other -->
+    <script src="https://kit.fontawesome.com/f13e27791e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Martian+Mono">
+    <script src="https://code.jquery.com/jquery-3.6.2.min.js" integrity="sha256-2krYZKh//PcchRtd+H+VyyQoZ/e3EcrkxhM8ycwASPA=" crossorigin="anonymous"></script>
+    <!-- my stuff -->
+    <link rel="shortcut icon" type="image/jpg" href="../favicon.png">
+    <link rel="stylesheet" href="../css/style.css">  
+    <link rel="stylesheet" href="../css/planets.css">  
+    <title>Solary System Model</title>
+    <style>
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="display-3">Wilson Reeves</h1>
+      <div class="row mb-5">
+        <div class="col-sm-6">
+          <p id="tagline">Solar System Model</p>
+        </div>
+        <div class="col-sm-6 text-end ">
+          <a class="text-shadow-none fs-6 text-light" href="./"><&nbsp;Back</a>
+        </div>
+      </div>
+      <div class="row g-5">
+        <div class="col-lg-3 controls">
+          <div class="btn-group mb-2 w-100" role="group" aria-label="Button group">
+            <input type="checkbox" class="btn-check" id="btn-check-1" autocomplete="off">
+            <label class="btn btn-outline-light" for="btn-check-1">Color</label>
+            <input type="checkbox" class="btn-check" id="btn-check-2" autocomplete="off">
+            <label class="btn btn-outline-light" for="btn-check-2">Gap</label>
+          </div>
+          <label for="speed-range" class="form-label">Revolution speed:</label>
+          <div class="speed float-end fs-6 fst-italic mt-3">24 days/s</div>
+          <input type="range" class="form-range" id="speed-range" min="-6" max="6" step="0.005" value="0.58" />
+          <label for="ring-range" class="form-label">Planet size:</label>
+          <input type="range" class="form-range" id="planet-range" min="2" max="6" value="4" step="0.2" />
+          <label for="ring-range" class="form-label">Ring size:</label>
+          <input type="range" class="form-range" id="ring-range" min="0" max="8" value="4" step="0.5" />
+          <label for="date-group" class="form-label">Target date:</label>
+          <div class="input-group mb-3 mt-1" id="date-group">
+            <span class="input-group-text bg-transparent text-light" id="basic-addon1"><i class="fa fa-clock-rotate-left"></i>
+            </span>
+            <input type="date" class="form-control bg-transparent text-light" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" id="datepick">
+            <button class="position btn text-white btn-outline-light bg-transparent fs-6"><i class="fa fa-circle-chevron-right"></i></button>
+          </div>
+          <button data-bs-toggle="modal" data-bs-target="#exampleModal1" class="btn text-white fs-6 p-0 mb-2">How does this work? <i class="fa-solid fa-circle-info mt-0"></i></button>
+          <p class="fst-italic">Note: This model currently does not work in some mobile browsers.</p>
+        </div>  
+        <div class="col-md-12 col-lg-6 px-5">
+          <svg id="solar-system" xmlns="http://www.w3.org/2000/svg" viewBox="-100 -100 200 200">
+            <g id="rings">
+              <circle class="ring" id="sun-ring" cx="0" cy="0" r="0" stroke="white" fill="none"></circle>
+              <circle class="ring" id="mercury-ring" cx="0" cy="0" r="10" stroke="white" fill="none"></circle>
+              <circle class="ring" id="venus-ring" cx="0" cy="0" r="20" stroke="white" fill="none"></circle>
+              <circle class="ring" id="earth-ring" cx="0" cy="0" r="30" stroke="white" fill="none"></circle>
+              <circle class="ring" id="mars-ring" cx="0" cy="0" r="40" stroke="white" fill="none"></circle>
+              <circle class="ring" id="jupiter-ring" cx="0" cy="0" r="50" stroke="white" fill="none"></circle>
+              <circle class="ring" id="saturn-ring" cx="0" cy="0" r="60" stroke="white" fill="none"></circle>
+              <circle class="ring" id="uranus-ring" cx="0" cy="0" r="70" stroke="white" fill="none"></circle>
+              <circle class="ring" id="neptune-ring" cx="0" cy="0" r="80" stroke="white" fill="none"></circle>
+              <circle class="ring" id="pluto-ring" cx="0" cy="0" r="90" stroke="white" fill="none"></circle>
+            </g>
+            <g id="planets">
+              <g><circle class="planet c-planet" id="sun" cx="0" cy="0"></circle></g>
+              <g><circle class="planet c-planet" id="mercury" cx="10" cy="0"></circle></g>
+              <g><circle class="planet c-planet" id="venus" cx="20" cy="0"></circle></g>
+              <g><circle class="planet c-planet" id="earth" cx="30" cy="0"></circle></g>
+              <g><circle class="planet c-planet" id="mars" cx="40" cy="0"></circle></g>
+              <g><circle class="planet c-planet" id="jupiter" cx="50" cy="0"></circle></g>
+              <g><circle class="planet c-planet" id="saturn" cx="60" cy="0"></circle></g>
+              <g><circle class="planet c-planet" id="uranus" cx="70" cy="0"></circle></g>
+              <g><circle class="planet c-planet" id="neptune" cx="80" cy="0"></circle></g>
+              <g><circle class="planet c-planet" id="pluto" cx="90" cy="0"></circle></g>
+            </g>
+          </svg>
+        </div>
+        <div class="col-lg-3">
+          <div class="mb-2 d-flex">
+            <div class="flex-fill w-100"><h5 class="fw-bold">Date</h5></div>
+            <div class="flex-fill fs-5"><div class="date-badge mono fs-7 badge bg-light text-dark align-top">Jul 20, 1969</div></div>
+          </div>
+          <h5 class="fw-bold">Model Stats</h5>
+          <p class="fs-6 conversion">Currently running at 8640000x speed of Earth</p>
+          <p class="fs-6 conversion-ex"></p>
+          <h5 class="fw-bold">Planet Stats</h5>
+          <table class="table table-speeds fs-6 text-light">
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+      <div class="modal-dialog modal-lg bg-dark">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel1">How the Model Works</h5>
+            <button type="button" class="btn-close btn-close-white text-light" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body fs-5">
+            <p>This model utilizes the VSOP87 (French acronym of "Secular Variation of the Planet's Orbits 1987") mathematical model of the solar system.</p>
+            <p>The VSOP formulas take a given Julian Calendar Date value <kbd>julian</kbd> and returns the (x,y) coordinate data of each planet. The angle is found using the <kbd>arctan</kbd> function.</p>
+            <p><kbd>(x, y) = getplanet ( julian ) </kbd></p>
+            <p><kbd>angle = arctan ( y / x ) </kbd></p>
+            <p>The revolution <kbd>speed</kbd> (e.g. 1 day/s) is taken and divided by the framerate (e.g. 1/60 days/s) and added to the <kbd>julian</kbd> date value. The operation is done 60 times every second, so that the date is updated to:</p>
+            <p><kbd>julian = julian + ( speed / 60 ) </kbd></p>
+            <a target="_blank" href="https://en.wikipedia.org/wiki/VSOP_model">Learn more about VSOP</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../js/script.js"></script>
+    <script src="../js/vsop87a_nano.js"></script>
+    <script src="../js/planets.js"></script>
+    <script src="../js/bootstrap.bundle.min.js" type="text/javascript"></script>
+  </body>
+</html>

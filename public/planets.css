@@ -1,11 +1,7 @@
-@import url("https://fonts.googleapis.com/css?family=Space+Grotesk");
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 #solar-system {
-  margin-bottom: .25rem;
+  // position: relative;
+  width: 100%;
+  margin-bottom: 4rem;
 }
 .planet {
   stroke: #010a0d;
@@ -37,6 +33,12 @@
 }
 #sun {
   r: 4;
+}
+.controls > *, .btn-group > * {
+  font-size: 1rem;
+}
+.p-stat {
+  transition: color 1s;
 }
 
 /*
@@ -70,47 +72,6 @@
   100% {transform: rotate(-360deg)}
 }
 
-.slider {
-  appearance: none;
-  background: none;
-  cursor: pointer;
-  @apply mx-4 w-48 sm:w-96 md:w-60;
-}
-
-
-.slider[type=range]::-webkit-slider-runnable-track {
-  @apply bg-slate-600 h-2 rounded-lg;
-}
-
-.slider[type=range]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  box-shadow: 0 0 0 6px #0f172a;
-  @apply bg-rose-800 h-4 w-4 -mt-1 rounded-full outline outline-1 outline-rose-600 hover:bg-rose-900 transition-all;
-}
-
-.slider[type=range]::-moz-range-track {
-  @apply bg-slate-600 h-2 rounded-lg;
-}
-
-.slider[type=range]::-moz-range-thumb {
-  box-shadow: 0 0 0 6px #0f172a;
-  @apply bg-rose-800 h-4 w-4 -mt-1 rounded-full outline outline-1 outline-rose-600 hover:bg-rose-900 transition-all;
-}
-
-.slider[type=range]::-ms-track {
-  @apply bg-slate-600 h-2 rounded-lg;
-}
-
-.slider[type=range]::-ms-fill-upper {
-  @apply bg-slate-600 h-2 rounded-lg;
-}
-
-.slider[type=range]::-ms-fill-lower {
-  @apply bg-slate-600 h-2 rounded-md;
-}
-
-.slider[type=range]::-ms-thumb {
-  box-shadow: 0 0 0 6px #0f172a;
-  @apply bg-rose-800 h-4 w-4 -mt-1 rounded-full outline outline-4 outline-slate-900 hover:bg-rose-900 transition-all;
+.table {
+  //font-size: ;
 }

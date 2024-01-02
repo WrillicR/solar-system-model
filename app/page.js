@@ -1,113 +1,75 @@
-import Image from 'next/image'
+import "bootstrap-icons/font/bootstrap-icons.css";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div className="p-10 flex flex-col justify-between h-full">
+      <div className="relative">
+        <h1 className="text-4xl font-mono mb-2">Solar System Model</h1>
+        <p className="text-xl">by Wilson Reeves</p>
+        <div className="absolute right-0 top-0">
+          <span className="px-4 py-1 text-base font-mono font-bold bg-white text-black rounded-lg">
+            Jan 1, 1969
+          </span>
+          <span className="px-2">
+            <i className="bi bi-info-circle text-xl hover:bg-white hover:text-slate-950 p-1 px-2 rounded-lg cursor-pointer active:brightness-75 transition-all"></i>
+          </span>
         </div>
       </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+      <div className="flex justify-center">
+        <svg id="solar-system" xmlns="http://www.w3.org/2000/svg" viewBox="-100 -100 200 200" className="w-1/3">
+          <g id="rings">
+            <circle className="ring" id="sun-ring" cx="0" cy="0" r="0" stroke="white" fill="none"></circle>
+            <circle className="ring" id="mercury-ring" cx="0" cy="0" r="10" stroke="white" fill="none"></circle>
+            <circle className="ring" id="venus-ring" cx="0" cy="0" r="20" stroke="white" fill="none"></circle>
+            <circle className="ring" id="earth-ring" cx="0" cy="0" r="30" stroke="white" fill="none"></circle>
+            <circle className="ring" id="mars-ring" cx="0" cy="0" r="40" stroke="white" fill="none"></circle>
+            <circle className="ring" id="jupiter-ring" cx="0" cy="0" r="50" stroke="white" fill="none"></circle>
+            <circle className="ring" id="saturn-ring" cx="0" cy="0" r="60" stroke="white" fill="none"></circle>
+            <circle className="ring" id="uranus-ring" cx="0" cy="0" r="70" stroke="white" fill="none"></circle>
+            <circle className="ring" id="neptune-ring" cx="0" cy="0" r="80" stroke="white" fill="none"></circle>
+            <circle className="ring" id="pluto-ring" cx="0" cy="0" r="90" stroke="white" fill="none"></circle>
+          </g>
+          <g id="planets">
+            <g><circle className="planet c-planet" id="sun" cx="0" cy="0"></circle></g>
+            <g><circle className="planet c-planet" id="mercury" cx="10" cy="0"></circle></g>
+            <g><circle className="planet c-planet" id="venus" cx="20" cy="0"></circle></g>
+            <g><circle className="planet c-planet" id="earth" cx="30" cy="0"></circle></g>
+            <g><circle className="planet c-planet" id="mars" cx="40" cy="0"></circle></g>
+            <g><circle className="planet c-planet" id="jupiter" cx="50" cy="0"></circle></g>
+            <g><circle className="planet c-planet" id="saturn" cx="60" cy="0"></circle></g>
+            <g><circle className="planet c-planet" id="uranus" cx="70" cy="0"></circle></g>
+            <g><circle className="planet c-planet" id="neptune" cx="80" cy="0"></circle></g>
+            <g><circle className="planet c-planet" id="pluto" cx="90" cy="0"></circle></g>
+          </g>
+        </svg>
       </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+      <div className="h-18 border border-slate-800 bg-slate-900 shadow-md p-2 md:px-6 rounded">
+        <div className="flex justify-between flex-wrap">
+          <div className="flex justify-center items-center py-2 flex-auto xl:flex-none">
+            <button className="outline-none px-4 py-1 rounded-s-lg bg-rose-900 hover:brightness-75 active:brightness-50 transition-all border border-rose-700 active:bg-rose-500 active:border-rose-300 shadow-sm shadow-slate-950 z-20">Color</button>
+            <button className="px-4 py-1 rounded-e-lg bg-slate-700 hover:brightness-75 active:brightness-50 transition-all border border-slate-500 active:bg-slate-400 active:border-slate-200 active:text-slate-950 shadow-sm shadow-slate-950 z-10">Gap</button>
+          </div>
+          <div className="flex justify-center items-center flex-wrap py-2">
+            <div className="">
+              <label className="block ms-4 text-sm">Revolution speed: <span className="float-right text-xs text-slate-500 me-4">21 days/s</span></label>
+              <input type="range" className="slider slider-1 shadow-sm shadow-slate-950" id="speed-range" />
+            </div>
+            <div className="">
+              <label className="block ms-4 text-sm">Planet size: <span className="float-right text-xs text-slate-500 me-4">21 days</span></label>
+              <input type="range" className="slider slider-2 shadow-sm shadow-slate-950" id="planet-range" />
+            </div>
+            <div className="">
+              <label className="block ms-4 text-sm">Ring size: <span className="float-right text-xs text-slate-500 me-4">21 days</span></label>
+              <input type="range" className="slider slider-3 shadow-sm shadow-slate-950" id="ring-range" />
+            </div>
+          </div>
+          <div className="flex justify-center items-center py-2 flex-auto xl:flex-none">
+            <button className="me-4 outline-none px-2 py-1 rounded-lg bg-slate-700 hover:brightness-75 active:brightness-50 transition-all border border-slate-500 active:bg-slate-950 active:border-slate-700 shadow-sm shadow-slate-950"><i className="bi bi-clipboard-data"></i></button>
+            <input type="date" className="border border-slate-700 bg-slate-950 outline-none text-base h-9 ps-3 shadow-sm shadow-slate-950 w-48 rounded-s-lg"></input>
+            <button className="outline-none px-2.5 py-1 rounded-e-lg bg-slate-800 h-9 hover:brightness-75 active:brightness-50 transition-all border border-slate-700 active:bg-slate-400 active:border-slate-200 active:text-slate-950 shadow-sm shadow-slate-950"><i className="bi bi-clock-history"></i></button>
+          </div>
+        </div>
       </div>
-    </main>
+    </div>
   )
 }
