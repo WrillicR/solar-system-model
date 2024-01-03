@@ -53,7 +53,7 @@ export default function Model(props) {
   }, [props.ringSize]);
 
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center w-full h-full">
       <svg id="solar-system" xmlns="http://www.w3.org/2000/svg" viewBox="-100 -100 200 200" className="w-1/3">
         <g id="rings">
           <circle className="ring" id="sun-ring" cx="0" cy="0" r="0" stroke="white" fill="none"></circle>

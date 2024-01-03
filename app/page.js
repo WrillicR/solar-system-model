@@ -15,11 +15,13 @@ export default function Home() {
 
   const [speed, setSpeed] = useState(1);
   const [viewDate, setViewDate] = useState(2440423.17847);
-  const [planetSize, setPlanetSize] = useState(5);
-  const [ringSize, setRingSize] = useState(3);
+  const [planetSize, setPlanetSize] = useState(4);
+  const [ringSize, setRingSize] = useState(2);
   const [color, setColor] = useState(false);
   const [gap, setGap] = useState(false);
   const speedRef = useRef(speed);
+
+  const lastFrameTimeRef = useRef(performance.now());
 
   let myTimeout = useRef(null);
 
@@ -36,6 +38,14 @@ export default function Home() {
   }
 
   const animate = () => {
+    /*
+    const now = performance.now();
+    const deltaTime = now - lastFrameTimeRef.current;
+    const currentFrameRate = 1000 / deltaTime;
+
+    if(currentFrameRate < 50) console.log(currentFrameRate);
+    lastFrameTimeRef.current = now;*/
+
     setViewDate(date => date + 1 * speedRef.current);
     myTimeout.current = setTimeout(() => { animate() }, 1000 / FRAMERATE );
   }
@@ -53,7 +63,8 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="p-10 flex flex-col justify-between h-full">
+    <div className="p-10 h-full">
+      <div className="flex justify-center items-center relative w-full h-full">
       <Header date={viewDate} />
       <Model speed={speed} date={viewDate} planetSize={planetSize} ringSize={ringSize} color={color} gap={gap} />
       <Controls speed={speed} handleSpeed={handleSpeed} 
@@ -62,6 +73,7 @@ export default function Home() {
         ringSize={ringSize} handleRingSize={setRingSize}
         color={color} handleColor={setColor} 
         gap={gap} handleGap={setGap} />
+      </div>
     </div>
   )
 }
