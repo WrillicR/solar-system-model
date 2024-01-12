@@ -7,11 +7,14 @@ import { unix_to_julian } from "@/app/util/motion";
 
 import Header from "./components/header";
 import Model from "./components/model";
+import ModelThree from "./components/model-three";
 import Controls from "./components/controls";
 
 const FRAMERATE = 60;
 
 export default function Home() {
+
+  const [three, setThree] = useState(false);
 
   const [speed, setSpeed] = useState(1);
   const [viewDate, setViewDate] = useState(2440423.17847);
@@ -63,16 +66,20 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="p-10 h-full">
+    <div className="h-full">
       <div className="flex justify-center items-center relative w-full h-full">
-      <Header date={viewDate} />
-      <Model speed={speed} date={viewDate} planetSize={planetSize} ringSize={ringSize} color={color} gap={gap} />
-      <Controls speed={speed} handleSpeed={handleSpeed} 
-        handleDate={handleViewDate} 
-        planetSize={planetSize} handlePlanetSize={setPlanetSize} 
-        ringSize={ringSize} handleRingSize={setRingSize}
-        color={color} handleColor={setColor} 
-        gap={gap} handleGap={setGap} />
+        <Header date={viewDate} />
+        {three ? 
+          <ModelThree date={viewDate} />
+          :
+          <Model speed={speed} date={viewDate} planetSize={planetSize} ringSize={ringSize} color={color} gap={gap} />
+        }
+        <Controls speed={speed} handleSpeed={handleSpeed} 
+          handleDate={handleViewDate} 
+          planetSize={planetSize} handlePlanetSize={setPlanetSize} 
+          ringSize={ringSize} handleRingSize={setRingSize}
+          color={color} handleColor={setColor} 
+          gap={gap} handleGap={setGap} />
       </div>
     </div>
   )

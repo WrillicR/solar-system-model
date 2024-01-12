@@ -57,7 +57,8 @@ export default function Controls(props) {
             </div>
           </div>
         </Modal>
-        <div className="absolute bottom-0 h-18 border border-slate-800 bg-slate-900 shadow-md shadow-black p-2 md:px-6 rounded w-full mx-10">
+        <div className="absolute left-0 bottom-0 p-10 w-full">
+        <div className="h-18 border border-slate-800 bg-slate-900 shadow-md shadow-black p-2 md:px-6 rounded w-full">
           <div className="flex justify-between flex-wrap">
             <div className="flex justify-center items-center py-2 flex-auto xl:flex-none">
               <button className={`outline-none px-4 py-1 rounded-s-lg hover:brightness-75 active:brightness-50 transition-all border active:bg-rose-500 active:border-rose-300 shadow-sm shadow-slate-950 z-20 ${ props.color ? "bg-rose-500 border-rose-300" : "bg-rose-900 border-rose-700"}`} onClick={e => props.handleColor(!props.color)}>Color</button>
@@ -83,6 +84,7 @@ export default function Controls(props) {
               <button className="outline-none px-2.5 py-1 rounded-e-lg bg-slate-800 h-9 hover:brightness-75 active:brightness-50 transition-all border border-slate-600 active:bg-slate-400 active:border-slate-200 active:text-slate-950 shadow-sm shadow-slate-950" onClick={() => handleDate(inputDate)}><i className="bi bi-clock-history"></i></button>
             </div>
           </div>
+        </div>
         </div>
       </>
     )

@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Space+Grotesk");
+@import url("https://fonts.googleapis.com/css?family=Space+Mono");
 
 @tailwind base;
 @tailwind components;
@@ -86,7 +87,7 @@
 .slider[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  box-shadow: 0 0 0 6px #0f172a;
+  box-shadow: 0 0 0 3px #0f172a;
   @apply bg-rose-800 h-4 w-4 -mt-1 rounded-full outline outline-1 outline-rose-600 hover:bg-rose-900 transition-all;
 }
 
@@ -95,7 +96,7 @@
 }
 
 .slider[type=range]::-moz-range-thumb {
-  box-shadow: 0 0 0 6px #0f172a;
+  box-shadow: 0 0 0 3px #0f172a;
   @apply bg-rose-800 h-4 w-4 -mt-1 rounded-full outline outline-1 outline-rose-600 hover:bg-rose-900 transition-all;
 }
 
@@ -112,6 +113,6 @@
 }
 
 .slider[type=range]::-ms-thumb {
-  box-shadow: 0 0 0 6px #0f172a;
+  box-shadow: 0 0 0 3px #0f172a;
   @apply bg-rose-800 h-4 w-4 -mt-1 rounded-full outline outline-4 outline-slate-900 hover:bg-rose-900 transition-all;
 }

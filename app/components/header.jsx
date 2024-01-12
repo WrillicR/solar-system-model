@@ -16,14 +16,16 @@ export default function Header(props) {
   }, [props.date]);
 
     return (
-      <div className="absolute w-full top-0 flex flex-row justify-between flex-wrap">
+      <div className="absolute w-full top-0 flex flex-row justify-between flex-wrap p-10 z-10">
         <Modal visible={showInfo} close={() => setShowInfo(false)}>
             <p className="mb-4">This model utilizes the VSOP87 (French acronym of "Secular Variation of the Planet's Orbits 1987") mathematical model of the solar system.</p>
             <p className="mb-4">The VSOP formulas take a given Julian Calendar Date value <span className="font-mono px-2 text-sm bg-slate-950 border border-slate-800">julian</span> and returns the (x,y) coordinate data of each planet. The angle is found using the <span className="font-mono px-2 text-sm bg-slate-950 border border-slate-800">arctan</span> function.</p>
             <p className="mb-4"><span className="font-mono px-2 text-sm bg-slate-950 border border-slate-800">(x, y) = getplanet ( julian ) </span></p>
             <p className="mb-4"><span className="font-mono px-2 text-sm bg-slate-950 border border-slate-800">angle = arctan ( y / x ) </span></p>
-            <p className="mb-4">The revolution <span className="font-mono px-2 text-sm bg text-sm-slate-950 border border-slate-800">speed</span> (e.g. 1 day/s) is taken and divided by the framerate (e.g. 1/60 days/s) and added to the <span className="font-mono px-2 text-sm bg text-sm-slate-950 border border-slate-800">julian</span> date value. The operation is done 60 times every second, so that the date is updated to:</p>
-            <p className="mb-8"><span className="font-mono px-2 text-sm bg-slate-950 border border-slate-800">julian = julian + ( speed / 60 ) </span></p>
+            <p className="mb-4">Each planet is then transformed using <span className="font-mono px-2 text-sm bg-slate-950 border border-slate-800">rotate ( angle )</span> with the sun as its origin to set it at the correct angle.</p>
+            <p className="mb-4">In order to animate the model, the revolution <span className="font-mono px-2 text-sm bg text-sm-slate-950 border border-slate-800">speed</span> (e.g. 1 day/s) is taken and divided by the framerate (e.g. 1/60 days/s) and added to the <span className="font-mono px-2 text-sm bg text-sm-slate-950 border border-slate-800">julian</span> date value. The operation is done 60 times every second, so that the date is updated to:</p>
+            <p className="mb-4"><span className="font-mono px-2 text-sm bg-slate-950 border border-slate-800">julian = julian + speed </span></p>
+            <p className="mb-8">Each planet is updated accordingly, 60 times per second.</p>
             <a target="_blank" href="https://en.wikipedia.org/wiki/VSOP_model" className="outline-none px-4 py-1 rounded-lg hover:brightness-75 active:brightness-50 transition-all border active:bg-rose-500 active:border-rose-300 shadow-sm shadow-slate-950 z-20 bg-rose-900 border-rose-700">Learn more about VSOP</a>
         </Modal>
         <div className="flex-auto mb-8">
