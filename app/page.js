@@ -16,7 +16,7 @@ export default function Home() {
 
   const [three, setThree] = useState(true);
 
-  const [speed, setSpeed] = useState(1);
+  const [speed, setSpeed] = useState(0.7943);
   const [viewDate, setViewDate] = useState(2440423.17847);
   const [planetSize, setPlanetSize] = useState(4);
   const [ringSize, setRingSize] = useState(2);
@@ -74,7 +74,7 @@ export default function Home() {
       <div className="flex justify-center items-center relative w-full h-full">
         <Header date={viewDate} three={three} setThree={handleThree}/>
         {three ? 
-          <ModelThree date={viewDate} />
+          <ModelThree date={viewDate} planetSize={planetSize} />
           :
           <Model speed={speed} date={viewDate} planetSize={planetSize} ringSize={ringSize} color={color} gap={gap} />
         }

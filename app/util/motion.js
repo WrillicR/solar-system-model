@@ -14,10 +14,12 @@ const speeds = [
   ["Neptune", 5.43],
   ["Pluto", 4.67]];
 
+
 // utilize the VSOP model to get (x,y) coordinates in an array
 export function get_positions(jd) {
   const t = (jd - 2451545.0) / 365250.0;
   const pos_array = [
+    [0,0,0],
     vsop.getMercury(t),
     vsop.getVenus(t),
     vsop.getEarth(t),
@@ -28,6 +30,32 @@ export function get_positions(jd) {
     vsop.getNeptune(t)
   ];
   return pos_array;
+}
+
+export function get_position(index, jd) {
+  const t = (jd - 2451545.0) / 365250.0;
+  switch(index) {
+    case 0:
+      return [0,0,0];
+    case 1:
+      return vsop.getMercury(t);
+    case 2:
+      return vsop.getVenus(t);
+    case 3:
+      return vsop.getEarth(t);
+    case 4:
+      return vsop.getMars(t);
+    case 5:
+      return vsop.getJupiter(t);
+    case 6:
+      return vsop.getSaturn(t);
+    case 7:
+      return vsop.getUranus(t);
+    case 8:
+      return vsop.getNeptune(t);
+    default:
+      return [0,0,0];
+  }
 }
 
 export function radians_to_degrees(radians) {

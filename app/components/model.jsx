@@ -13,7 +13,7 @@ export default function Model(props) {
     for ( let i = 0 ; i < framePositions.length; i++ ) {
       let planet_deg = radians_to_degrees(Math.atan2(framePositions[i][1],framePositions[i][0]));
       let planet_deg_abs = (360 - planet_deg).toFixed(3);
-      document.getElementsByClassName('planet')[i+1].style["transform"] = "rotate(" + planet_deg_abs + "deg)";
+      document.getElementsByClassName('planet')[i].style["transform"] = "rotate(" + planet_deg_abs + "deg)";
     }
   }, [props.date]);
   

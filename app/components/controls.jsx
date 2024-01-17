@@ -11,7 +11,7 @@ export default function Controls(props) {
   const initialDate = new moment().format("YYYY-MM-DD");
 
   const [inputDate, setInputDate] = useState(initialDate);
-  const [daySpeed, setDaySpeed] = useState(75.54);
+  const [daySpeed, setDaySpeed] = useState(60.00);
   const [showModal, setShowModal] = useState(false);
 
   const [showFull, setShowFull] = useState(true);
@@ -71,7 +71,7 @@ export default function Controls(props) {
               </div>
               <div className="">
                 <label className="block ms-4 text-sm">Planet size: </label>
-                <input type="range" className="slider slider-2 shadow-sm shadow-slate-950" id="planet-range" min="1" max="7" step="0.25" value={props.planetSize} onChange={e => props.handlePlanetSize(e.target.value)} />
+                <input type="range" className="slider slider-2 shadow-sm shadow-slate-950" id="planet-range" min="1" max="7" step="0.05" value={props.planetSize} onChange={e => props.handlePlanetSize(e.target.value)} />
               </div>
               <div className="">
                 <label className="block ms-4 text-sm">Ring size: </label>
