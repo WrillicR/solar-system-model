@@ -58,11 +58,11 @@ export default function Controls(props) {
           </div>
         </Modal>
         <div className="absolute left-0 bottom-0 p-10 w-full">
-        <div className="h-18 border border-slate-800 bg-slate-900 shadow-md shadow-black p-2 md:px-6 rounded w-full">
+        <div className="h-18 border border-slate-800 bg-slate-900 shadow-md shadow-slate-950 p-2 md:px-6 rounded w-full">
           <div className="flex justify-between flex-wrap">
             <div className="flex justify-center items-center py-2 flex-auto xl:flex-none">
-              <button className={`outline-none px-4 py-1 rounded-s-lg hover:brightness-75 active:brightness-50 transition-all border active:bg-rose-500 active:border-rose-300 shadow-sm shadow-slate-950 z-20 ${ props.color ? "bg-rose-500 border-rose-300" : "bg-rose-900 border-rose-700"}`} onClick={e => props.handleColor(!props.color)}>Color</button>
-              <button className={`px-4 py-1 rounded-e-lg hover:brightness-75 active:brightness-50 transition-all border active:bg-slate-400 active:border-slate-200 active:text-slate-950 shadow-sm shadow-slate-950 z-10 ${ props.gap ? "bg-slate-400 border-slate-200 text-slate-950" : "bg-slate-700 border-slate-500"}`} onClick={e => props.handleGap(!props.gap)}>Gap</button>
+              <button className={`outline-none px-4 py-1 rounded-s-lg hover:brightness-75 active:brightness-50 transition-all border active:bg-rose-500 active:border-rose-300 shadow-sm shadow-slate-950 ${ props.color ? "bg-rose-500 border-rose-300" : "bg-rose-900 border-rose-700"}`} onClick={e => props.handleColor(!props.color)}>Color</button>
+              <button className={`px-4 py-1 rounded-e-lg hover:brightness-75 active:brightness-50 transition-all border active:bg-slate-400 active:border-slate-200 active:text-slate-950 shadow-sm shadow-slate-950 ${ props.gap ? "bg-slate-400 border-slate-200 text-slate-950" : "bg-slate-700 border-slate-500"}`} onClick={e => props.handleGap(!props.gap)}>Gap</button>
             </div>
             <div className="flex justify-center items-center flex-wrap py-2">
               <div className="">

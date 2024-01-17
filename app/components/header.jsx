@@ -28,12 +28,16 @@ export default function Header(props) {
             <p className="mb-8">Each planet is updated accordingly, 60 times per second.</p>
             <a target="_blank" href="https://en.wikipedia.org/wiki/VSOP_model" className="outline-none px-4 py-1 rounded-lg hover:brightness-75 active:brightness-50 transition-all border active:bg-rose-500 active:border-rose-300 shadow-sm shadow-slate-950 z-20 bg-rose-900 border-rose-700">Learn more about VSOP</a>
         </Modal>
-        <div className="flex-auto mb-8">
+        <div className="flex-auto mbsdf-8">
           <h1 className="text-4xl font-mono mb-2">Solar System Model</h1>
           <span className="text-xl me-4">by Wilson Reeves</span>
         </div>
         <div className="float-right">
-          <span className="px-4 py-1 font-mono font-bold bg-white text-black rounded-lg">
+          <span className="px-2">
+            <i className={`bi ${props.three ? "bi-box-fill" : "bi-box"} text-lg hover:bg-white hover:text-slate-950 py-1 px-2 rounded-full cursor-pointer active:brightness-75 transition-all`}
+              onClick={() => props.setThree(!props.three)}></i>
+          </span>
+          <span className="px-4 py-1 font-mono font-bold bg-white text-black rounded-lg select-none">
             {displayDate}
           </span>
           <span className="px-2">

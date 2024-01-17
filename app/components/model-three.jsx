@@ -17,7 +17,7 @@ function Planet(props) {
       <mesh
         {...props}
         ref={ref}
-        scale={0.05}
+        scale={0.15}
         onPointerOver={(event) => (event.stopPropagation(), hover(true))}
         onPointerOut={(event) => hover(false)}>
         <sphereGeometry args={[1, 32, 32]} />
@@ -36,7 +36,7 @@ export default function ModelThree(props) {
     }, [props.date]);
 
     return (
-        <Canvas camera={{zoom: 5, fov: 1000, position: [0,16,6]}}>
+        <Canvas camera={{zoom: 5, fov: 1000, position: [0,16,2]}}>
             <ambientLight intensity={Math.PI / 2} />
             <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} decay={0} intensity={Math.PI} />
             <pointLight position={[-10, -10, -10]} decay={0} intensity={Math.PI} />

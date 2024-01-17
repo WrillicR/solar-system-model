@@ -14,7 +14,7 @@ const FRAMERATE = 60;
 
 export default function Home() {
 
-  const [three, setThree] = useState(false);
+  const [three, setThree] = useState(true);
 
   const [speed, setSpeed] = useState(1);
   const [viewDate, setViewDate] = useState(2440423.17847);
@@ -27,6 +27,10 @@ export default function Home() {
   const lastFrameTimeRef = useRef(performance.now());
 
   let myTimeout = useRef(null);
+
+  const handleThree = (bool) => {
+    setThree(bool);
+  }
 
   const handleSpeed = (num) => {
     speedRef.current = num;
@@ -68,7 +72,7 @@ export default function Home() {
   return (
     <div className="h-full">
       <div className="flex justify-center items-center relative w-full h-full">
-        <Header date={viewDate} />
+        <Header date={viewDate} three={three} setThree={handleThree}/>
         {three ? 
           <ModelThree date={viewDate} />
           :
