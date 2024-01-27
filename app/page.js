@@ -83,7 +83,8 @@ export default function Home() {
           planetSize={planetSize} handlePlanetSize={setPlanetSize} 
           ringSize={ringSize} handleRingSize={setRingSize}
           color={color} handleColor={setColor} 
-          gap={gap} handleGap={setGap} />
+          gap={gap} handleGap={setGap} 
+          three={three}/>
       </div>
     </div>
   )

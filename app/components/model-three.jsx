@@ -11,6 +11,7 @@ const def_size = 0.1;
 const sizes = [696340, 2440, 6052, 6371, 3389, 69910, 58230, 25362, 24622];
 const km_to_unit = 149228138;
 const days = [0, 88, 225, 365, 687, 4333, 10759, 30687, 60190];
+const days_easy = [0, 88, 225, 365, 687, 4333, 5000, 5000, 5000];
 
 function Ring(props) {
 
@@ -57,7 +58,7 @@ export default function ModelThree(props) {
             const newPoints = [];
             for (let i = 0; i < 9; i++) {
                 const points = []
-                for (let j = 0; j < days[i] + 1; j += 0.5) {
+                for (let j = 0; j < days[i] + 3; j += 3 ) {
                     const jd = props.date + j;
                     const ring_vect = get_position(i, jd);
                     points.push(new THREE.Vector3(ring_vect[0], ring_vect[1], ring_vect[2]));
@@ -65,7 +66,6 @@ export default function ModelThree(props) {
                 newPoints.push(points);
             }
             setRingPoints(newPoints);
-            console.log("stuff");
             canvasRef.current = 0;
         }
     }, []);
